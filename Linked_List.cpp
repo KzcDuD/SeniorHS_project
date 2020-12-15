@@ -26,12 +26,12 @@ public:
 	void Reverse();
 };
 void LinkedList::PrintList() {
-	if (first == 0) {                     // ¦pªGfirst node«ü¦VNULL, ªí¥Ülist¨S¦³¸ê®Æ
+	if (first == 0) {                     // å¦‚æœfirst nodeæŒ‡å‘NULL, è¡¨ç¤ºlistæ²’æœ‰è³‡æ–™
 		cout << "List is empty.\n";
 		return;
 	}
 
-	ListNode* current = first;             // ¥Îpointer *current¦blist¤¤²¾°Ê
+	ListNode* current = first;             // ç”¨pointer *currentåœ¨listä¸­ç§»å‹•
 	while (current != 0) {                 // Traversal
 		cout << current->data << " ";
 		current = current->next;
@@ -40,47 +40,47 @@ void LinkedList::PrintList() {
 }
 void LinkedList::Push_front(int x) {
 
-	ListNode* newNode = new ListNode(x);   // °t¸m·sªº°O¾ĞÅé
-	newNode->next = first;                 // ¥ı§âfirst±µ¦bnewNode«á­±
-	first = newNode;                       // ¦A§âfirst«ü¦VnewNode©Ò«ü¦Vªº°O¾ĞÅé¦ì¸m
+	ListNode* newNode = new ListNode(x);   // é…ç½®æ–°çš„è¨˜æ†¶é«”
+	newNode->next = first;                 // å…ˆæŠŠfirstæ¥åœ¨newNodeå¾Œé¢
+	first = newNode;                       // å†æŠŠfirstæŒ‡å‘newNodeæ‰€æŒ‡å‘çš„è¨˜æ†¶é«”ä½ç½®
 
 }
-void LinkedList::Push_back(int x)/*¦bLinked listªº§À¤Ú·s¼W¸ê®Æ¡C*/ {
+void LinkedList::Push_back(int x)/*åœ¨Linked listçš„å°¾å·´æ–°å¢è³‡æ–™ã€‚*/ {
 
-	ListNode* newNode = new ListNode(x);   // °t¸m·sªº°O¾ĞÅé
+	ListNode* newNode = new ListNode(x);   // é…ç½®æ–°çš„è¨˜æ†¶é«”
 
-	if (first == 0) {                      // ­Ylist¨S¦³node, ¥OnewNode¬°first
+	if (first == 0) {                      // è‹¥listæ²’æœ‰node, ä»¤newNodeç‚ºfirst
 		first = newNode;
 		return;
 	}
 
 	ListNode* current = first;
-	while (current->next != 0) {           // Traversal????
+	while (current->next != 0) {           
 		current = current->next;
 	}
-	current->next = newNode;               // ±NnewNode±µ¦blistªº§À¤Ú
+	current->next = newNode;               // å°‡newNodeæ¥åœ¨listçš„å°¾å·´
 }
 void LinkedList::Delete(int x) {
 
 	ListNode* current = first,
 		* previous = 0;
 	while (current != 0 && current->data != x) {  // Traversal
-		previous = current;                       // ¦pªGcurrent«ü¦VNULL
-		current = current->next;                  // ©Î¬Ocurrent->data == x
-	}                                             // §Yµ²§ôwhile loop
+		previous = current;                       // å¦‚æœcurrentæŒ‡å‘NULL
+		current = current->next;                  // æˆ–æ˜¯current->data == x
+	}                                             // å³çµæŸwhile loop
 
-	if (current == 0) {                 // list¨S¦³­n§Rªºnode, ©Î¬Olist¬°empty
+	if (current == 0) {                 // listæ²’æœ‰è¦åˆªçš„node, æˆ–æ˜¯listç‚ºempty
 		cout << "There is no " << x << " in list.\n";
 		// return;
 	}
-	else if (current == first) {        // ­n§R°£ªºnode­è¦n¦blistªº¶}ÀY
-		first = current->next;          // §âfirst²¾¨ì¤U¤@­Ónode
-		delete current;                 // ¦pªGlist¥u¦³¤@­Ónode, ¨º»òfirst´N·|«ü¦VNULL
-		current = 0;                    // ·í«ü¼Ğ³Qdelete«á, ±N¨ä«ü¦VNULL, ¥i¥HÁ×§K¤£¥²­nbug
+	else if (current == first) {        // è¦åˆªé™¤çš„nodeå‰›å¥½åœ¨listçš„é–‹é ­
+		first = current->next;          // æŠŠfirstç§»åˆ°ä¸‹ä¸€å€‹node
+		delete current;                 // å¦‚æœliståªæœ‰ä¸€å€‹node, é‚£éº¼firstå°±æœƒæŒ‡å‘NULL
+		current = 0;                    // ç•¶æŒ‡æ¨™è¢«deleteå¾Œ, å°‡å…¶æŒ‡å‘NULL, å¯ä»¥é¿å…ä¸å¿…è¦bug
 		// return;                     
 	}
-	else {                              // ¨ä¾l±¡ªp, list¤¤¦³±ı§R°£ªºnode, 
-		previous->next = current->next; // ¦Ó¥Bnode¤£¬°first, ¦¹®Éprevious¤£¬°NULL
+	else {                              // å…¶é¤˜æƒ…æ³, listä¸­æœ‰æ¬²åˆªé™¤çš„node, 
+		previous->next = current->next; // è€Œä¸”nodeä¸ç‚ºfirst, æ­¤æ™‚previousä¸ç‚ºNULL
 		delete current;
 		current = 0;
 		// return;
@@ -107,33 +107,33 @@ void LinkedList::Reverse() {
 		* preceding = first->next;
 
 	while (preceding != 0) {
-		current->next = previous;      // §âcurrent->nextÂà¦V
-		previous = current;            // previous©¹«á®¿
-		current = preceding;           // current©¹«á®¿
-		preceding = preceding->next;   // preceding©¹«á®¿
-	}                                  // preceding§ó·s¦¨NULL§Y¸õ¥Xwhile loop
+		current->next = previous;      // æŠŠcurrent->nextè½‰å‘
+		previous = current;            // previouså¾€å¾ŒæŒª
+		current = preceding;           // currentå¾€å¾ŒæŒª
+		preceding = preceding->next;   // precedingå¾€å¾ŒæŒª
+	}                                  // precedingæ›´æ–°æˆNULLå³è·³å‡ºwhile loop
 
-	current->next = previous;          // ¦¹®Écurrent¦ì©ó³Ì«á¤@­Ónode, ±Ncurrent->nextÂà¦V
-	first = current;                   // §ó·sfirst¬°current
+	current->next = previous;          // æ­¤æ™‚currentä½æ–¼æœ€å¾Œä¸€å€‹node, å°‡current->nextè½‰å‘
+	first = current;                   // æ›´æ–°firstç‚ºcurrent
 }
 
 int main() {
-	LinkedList list;     // «Ø¥ßLinkedListªºobject
-	list.PrintList();    // ¥Ø«elist¬OªÅªº
-	list.Delete(4);      // list¬OªÅªº, ¨S¦³4
+	LinkedList list;     // å»ºç«‹LinkedListçš„object
+	list.PrintList();    // ç›®å‰listæ˜¯ç©ºçš„
+	list.Delete(4);      // listæ˜¯ç©ºçš„, æ²’æœ‰4
 	list.Push_back(5);   // list: 5
 	list.Push_back(3);   // list: 5 3
 	list.Push_front(9);  // list: 9 5 3
-	list.PrintList();    // ¦L¥X:  9 5 3
+	list.PrintList();    // å°å‡º:  9 5 3
 	list.Push_back(4);   // list: 9 5 3 4
 	list.Delete(9);      // list: 5 3 4
-	list.PrintList();    // ¦L¥X:  5 3 4
+	list.PrintList();    // å°å‡º:  5 3 4
 	list.Push_front(8);  // list: 8 5 3 4
-	list.PrintList();    // ¦L¥X:  8 5 3 4
+	list.PrintList();    // å°å‡º:  8 5 3 4
 	list.Reverse();      // list: 4 3 5 8
-	list.PrintList();    // ¦L¥X:  4 3 5 8
-	list.Clear();        // ²MªÅlist
-	list.PrintList();    // ¦L¥X: List is empty.
+	list.PrintList();    // å°å‡º:  4 3 5 8
+	list.Clear();        // æ¸…ç©ºlist
+	list.PrintList();    // å°å‡º: List is empty.
 
 	return 0;
 }
