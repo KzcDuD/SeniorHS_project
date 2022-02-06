@@ -36,8 +36,11 @@ void sort(int* arr,int len) {
 
 int main() {
 	int n,find;
+	cout<<"\ninput length of the array.\n";
 	cin >> n;
+
 	int* array = new int[n];
+	cout<<"\ninput number in the array.\n";
 	for (int i = 0; i < n;i++) {
 		cin >> array[i];
 	}
@@ -50,6 +53,8 @@ int main() {
 	cout << "\nWhat you want to find?\n";
 	cin >> find;
 	int bi = Binary_Sreach(array,n,find);
-	cout << bi << endl;
+
+	cout <<"The index of "<< find<<"is "<< bi <<"."<< endl;
+	
 	return 0;
 }
