@@ -1,8 +1,8 @@
 #include<iostream>
 #include<iomanip>
 #include<stdio.h>
-
 using namespace std;
+
 class LInkedList;
 class ListNode {
 private:
@@ -22,7 +22,7 @@ public:
 	void Push_front(int x);
 	void Push_back(int x);
 	void Delete(int x);
-	void Clear();
+	void clear();
 	void Reverse();
 };
 void LinkedList::PrintList() {
@@ -86,7 +86,7 @@ void LinkedList::Delete(int x) {
 		// return;
 	}
 }
-void LinkedList::Clear() {
+void LinkedList::clear() {
 
 	while (first != 0) {            // Traversal
 		ListNode* current = first;
@@ -132,7 +132,7 @@ int main() {
 	list.PrintList();    // 印出:  8 5 3 4
 	list.Reverse();      // list: 4 3 5 8
 	list.PrintList();    // 印出:  4 3 5 8
-	list.Clear();        // 清空list
+	list.clear(); // list        // 清空list
 	list.PrintList();    // 印出: List is empty.
 
 	return 0;
