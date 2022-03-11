@@ -32,7 +32,7 @@ void LinkedList::PrintList() {
 	}
 
 	ListNode* current = first;             // 用pointer *current在list中移動
-	while (current != 0) {                 // Traversal
+	while (current != 0) {                 // Traversal 尋訪
 		cout << current->data << " ";
 		current = current->next;
 	}
