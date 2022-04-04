@@ -113,8 +113,8 @@ void LinkedList::reverse(){
         preceding = current->next;    // preceding後移
     }                                 // preceding更新成NULL 結束while
 
-    current->next =previous;          // 
-    first = current;
+    current->next =previous;          // 此時current位於最後一個node,將current->next轉向
+    first = current;                  // 更新first為current    
 
 }
 
