@@ -70,7 +70,7 @@ void LinkedList::Delete(int x){
         current = current->next;         //結束while loop
     }
     if(current == first){                //list為empty or 沒有要刪的node 
-        cout<<"There is no "<<x<<"in listt.\n";
+        cout<<"There is no "<<x<<" in list.\n";
         return;
     }
     else if(current == first){          //要刪除的node 在list的開頭
@@ -80,7 +80,7 @@ void LinkedList::Delete(int x){
         return;
     }
     else{                               // node 不為first previous不為NULL
-        previous->next = current->next; 
+        previous->next = current->next;
         delete current;
         current = 0;
         return;
