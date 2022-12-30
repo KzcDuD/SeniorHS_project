@@ -3,4 +3,3 @@
 **10 Cases of code**
 
 ## 2021 C++ data structure;
-**Linked_List**
