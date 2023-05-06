@@ -12,7 +12,6 @@ void Selection_Sort(int* arr,int len) {
         int tmp = arr[i];
         arr[i]=arr[max_idx];
         arr[max_idx] = tmp;
-        print(arr,len);
     }
 }
 
