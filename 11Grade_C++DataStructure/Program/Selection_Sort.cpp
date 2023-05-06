@@ -2,14 +2,17 @@
 using namespace std;
 
 void Selection_Sort(int* arr,int len) {
-    for (int i = 0 ;i < len;i++) {
-        for (int j = i+1; j < len;j++) {
-            if (arr[i] > arr[j]) {
-                int temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
+    for (int i=len;i>=0;i--){
+        int max_idx=i;
+        for(int j=i;j>=0;j--){
+            if(arr[j]>arr[max_idx]){
+                max_idx=j;
             }
-       }
+        }
+        int tmp = arr[i];
+        arr[i]=arr[max_idx];
+        arr[max_idx] = tmp;
+        print(arr,len);
     }
 }
 
